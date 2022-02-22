@@ -1,0 +1,82 @@
+:root {
+    --menu-bar-width: 60px;
+    --menu-bar-height: 10px;
+    --menu-color: #D84282;
+}
+
+
+#menu {
+    background-color: var(--menu-color);
+    position: relative;
+    width: 60px;
+    height: 10px;
+    transition: all 0.15s ease-in-out;
+}
+
+
+#container {
+    /*border: 1px solid red;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    padding: 20px 10px;
+}
+
+#container:active #menu {
+    background-color: transparent;
+
+}
+
+#container:hover #menu::before {
+    left: 0px;
+    top: -20px;
+}
+
+#container:hover #menu::after {
+    left: 0px;
+    top: 20px;
+}
+
+#container:active #menu::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+#container:active #menu::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+#container:visited #menu::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+#container:visited #menu::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+
+#menu::before,
+#menu::after {
+    background-color: var(--menu-color);
+    display: block;
+    content: "";
+    width: 60px;
+    height: 10px;
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+}
+
+
+#menu::before {
+    left: -10px;
+    top: -20px;
+}
+
+#menu::after {
+    left: -10px;
+    top: 20px;
+}
